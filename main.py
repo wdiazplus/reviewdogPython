@@ -1,7 +1,4 @@
-import sys
-
-print("Hello from python")
-
+# Test Script
 
 def sum(a,b):
     print(a+b)
