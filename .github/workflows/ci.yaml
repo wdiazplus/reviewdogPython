@@ -1,0 +1,22 @@
+---
+name: Test with ReviewDog
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  flake8-lint:
+    name: Run FLake with reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: reviewdog/action-setup@v1
+      - name: Set up python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Run Linter
+        uses: reviewdog/action-flake8@v3
+        with:
+          github_token: ${{ secrets.REVIEWDOG_TOKEN }} 
