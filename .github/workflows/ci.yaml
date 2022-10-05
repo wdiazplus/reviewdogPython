@@ -1,7 +1,7 @@
 ---
 name: Test with ReviewDog
 
-on: [push] 
+on: [push, pull_request] 
 
 jobs:
   flake8-lint:
@@ -9,12 +9,12 @@ jobs:
     name: Run FLake with reviewdog
     steps:
       - name: Check out source repository
-        uses: reviewdog/action-setup@v1
+        uses: actions/checkout@v2
       - name: Set up python environment
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - name: Run Linter
+      - name: Run Linter 🔏 and Reviewdog 🐶
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.REVIEWDOG_TOKEN }}
