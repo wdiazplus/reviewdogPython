@@ -1,8 +1,14 @@
 ---
 name: Test with ReviewDog
 
-on: [push, pull_request] 
-
+on: 
+  push:
+    branches:
+      - "main"
+  pull_request:
+    tags:
+      - "*-test"
+     
 jobs:
   flake8-lint:
     runs-on: ubuntu-latest
