@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   flake8-lint:
     runs-on: ubuntu-latest
-    name: Run FLake with reviewdog
+    name: Run flake with reviewdog
     steps:
       - name: Check out source repository
         uses: actions/checkout@v2
