@@ -2,8 +2,7 @@
 name: Test with ReviewDog
 
 on: 
-  push:
-
+  push
 
 jobs:
   flake8-lint:
@@ -20,6 +19,5 @@ jobs:
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.REVIEWDOG_TOKEN }}
-      - run: flake8 main.py | reviewdog -f flake8 -diff="git diff main"
       - name: Run direct command 🦍
         run: python main.py
