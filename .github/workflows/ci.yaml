@@ -18,4 +18,5 @@ jobs:
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.REVIEWDOG_TOKEN }}
+      - name: Run direct command 🦍
         run: flake8 main.py | reviewdog -f flake8 -diff="git diff main"
