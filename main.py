@@ -1,5 +1,6 @@
-def sum(a,b):
+def sum(a, b):
     print(a+b)
 
+
 if __name__ == "__main__":
- sum(2,3)
+    sum(2, 3)
