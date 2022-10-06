@@ -19,3 +19,7 @@ jobs:
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.REVIEWDOG_TOKEN }}
+      - name: yamllint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          github_token: ${{ secrets.REVIEWDOG_TOKEN }}
