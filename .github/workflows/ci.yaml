@@ -19,5 +19,3 @@ jobs:
         uses: reviewdog/action-flake8@v3
         with:
           github_token: ${{ secrets.REVIEWDOG_TOKEN }}
-      - name: Run direct command 🦍
-        run: python main.py
